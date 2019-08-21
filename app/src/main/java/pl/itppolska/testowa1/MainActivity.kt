@@ -21,9 +21,11 @@ class MainActivity : AppCompatActivity() {
 
         btnSendMessage.setOnClickListener {
             val message : String = edUserMessage.text.toString()
-            Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+           // Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
 
             val intent = Intent(this, SecondActivity::class.java)
+
+            intent.putExtra("user_message",message)
             startActivity(intent)
         }
 
